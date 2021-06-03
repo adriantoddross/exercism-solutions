@@ -1,6 +1,4 @@
-
-
-export const steps = () => {
+export const steps = (number) => {
   /*
   Cant solve with normal function, need n to be reduced indefinitely
   Solve with recursion and a base case; but how to keep track of count w/ recursive function?
@@ -11,10 +9,26 @@ export const steps = () => {
   If n = 1, return count
   Open while loop
     while n > 1...
+    count++;
       if n is odd: 3n + 1
       if n is even:  n / 2
   Close while loop
   */
 
-  return;
+  let steps = 0;
+  let n = number;
+
+  if (n === 1) {
+    return steps;
+  }
+
+  while (n > 1) {
+    steps++;
+
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = Math.pow(n, 3) + 1;
+    }
+  }
 };
