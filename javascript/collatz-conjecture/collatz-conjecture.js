@@ -18,10 +18,6 @@ export const steps = (number) => {
   let steps = 0;
   let n = number;
 
-  if (n === 1) {
-    return steps;
-  }
-
   while (n > 1) {
     steps++;
 
@@ -30,5 +26,9 @@ export const steps = (number) => {
     } else {
       n = Math.pow(n, 3) + 1;
     }
+  }
+
+  if (n === 1) {
+    return steps;
   }
 };
