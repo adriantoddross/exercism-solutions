@@ -1,4 +1,8 @@
 export const steps = (number) => {
+  if (number <= 0) {
+    throw new Error("Only positive numbers are allowed");
+  }
+
   /*
   Cant solve with normal function, need n to be reduced indefinitely
   Solve with recursion and a base case; but how to keep track of count w/ recursive function?
