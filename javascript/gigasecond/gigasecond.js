@@ -1,4 +1,4 @@
-export const gigasecond = () => {
+export const gigasecond = (date) => {
   /*
   A gigasecond is 1 billion seconds
 
@@ -11,5 +11,8 @@ export const gigasecond = () => {
   Return dateAfterGigasecond
   */
 
-  return;
+  const gigasecond = 1e9;
+  const dateAfterGigasecond = new Date(date.getTime() + gigasecond * 1000);
+  console.log({ date: date, dateAfterGigasecond });
+  return dateAfterGigasecond;
 };
