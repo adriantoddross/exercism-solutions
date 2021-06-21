@@ -1,5 +1,6 @@
-export const gigasecond = (date) => {
-  const gigasecond = 1e9; // 1,000,000
-  const dateAfterGigasecond = new Date(date.getTime() + gigasecond * 1000); // Add a million seconds in milliseconds to a given date
-  return dateAfterGigasecond;
+const ONE_BILLION = 1_000_000_000_000;
+
+export const gigasecond = (startDate) => {
+  const GIGASECOND = ONE_BILLION;
+  return new Date(startDate.getTime() + GIGASECOND);
 };
