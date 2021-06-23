@@ -1,4 +1,4 @@
-export const toRna = () => {
+export const toRna = (DNASequence) => {
   /*
   approach 1:
     const RNAstrand =  '';
@@ -22,5 +22,29 @@ export const toRna = () => {
       for of loop or a while loop (since we don't need an index)
   */
 
-  return;
+  let RNASequence = "";
+
+  for (let i = 0; i < DNASequence.length; i++) {
+    switch (DNASequence[i]) {
+      case "G":
+        RNASequence += "C";
+        break;
+
+      case "C":
+        RNASequence += "G";
+        break;
+
+      case "T":
+        RNASequence += "A";
+        break;
+
+      case "A":
+        RNASequence += "U";
+        break;
+
+      default:
+        break;
+    }
+  }
+  return RNASequence;
 };
