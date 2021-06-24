@@ -1,27 +1,27 @@
-export const toRna = (DNASequence) => {
-  let RNASequence = "";
+export const toRna = (strand) => {
+  let transcription = "";
 
-  for (let index = 0; index < DNASequence.length; index++) {
-    switch (DNASequence[index]) {
+  for (let index = 0; index < strand.length; index++) {
+    switch (strand[index]) {
       case "G":
-        RNASequence += "C";
+        transcription += "C";
         break;
 
       case "C":
-        RNASequence += "G";
+        transcription += "G";
         break;
 
       case "T":
-        RNASequence += "A";
+        transcription += "A";
         break;
 
       case "A":
-        RNASequence += "U";
+        transcription += "U";
         break;
 
       default:
         break;
     }
   }
-  return RNASequence;
+  return transcription;
 };
