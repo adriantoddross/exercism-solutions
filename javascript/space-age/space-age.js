@@ -30,5 +30,6 @@ export const age = (planet, seconds) => {
 
   const age = seconds / EARTH_YEAR_IN_SECONDS;
 
+  // Check out javascript.info to use Math.round to round to 2 decimal places: https://javascript.info/number
   return age * orbitalPeriod[planet.toLowerCase()];
 };
