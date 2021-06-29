@@ -15,18 +15,20 @@ If Earth, return age in Earth years... else return age in Earth years * orbital 
 Alternatively, return age * orbitalPeriod[planet]
 */
 
-export const age = (planet, ageInSeconds) => {
+export const age = (planet, seconds) => {
   const EARTH_YEAR_IN_SECONDS = 31_557_600;
   const orbitalPeriod = {
-    Mercury: 0.2408467,
-    Venus: 0.61519726,
-    Earth: 1,
-    Mars: 1.8808158,
-    Jupiter: 11.862615,
-    Saturn: 29.447498,
-    Uranus: 84.016846,
-    Neptune: 164.79132,
+    mercury: 0.2408467,
+    venus: 0.61519726,
+    earth: 1,
+    mars: 1.8808158,
+    jupiter: 11.862615,
+    saturn: 29.447498,
+    uranus: 84.016846,
+    neptune: 164.79132,
   };
 
-  return age;
+  const age = seconds / EARTH_YEAR_IN_SECONDS;
+
+  return age * orbitalPeriod[planet.toLowerCase()];
 };
