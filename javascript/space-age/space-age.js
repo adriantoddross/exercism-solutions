@@ -28,8 +28,8 @@ export const age = (planet, seconds) => {
     neptune: 164.79132,
   };
 
-  const age = seconds / EARTH_YEAR_IN_SECONDS;
+  const yearsOld = seconds / EARTH_YEAR_IN_SECONDS;
 
-  // Check out javascript.info to use Math.round to round to 2 decimal places: https://javascript.info/number
-  return age * orbitalPeriod[planet.toLowerCase()];
+  // To round the number to the 2nd digit after the decimal, we can multiply the number by 100 (or a bigger power of 10), call the rounding function and then divide it back: https://javascript.info/number#rounding 
+  return Math.round(yearsOld * orbitalPeriod[planet.toLowerCase()] * 100) / 100;
 };
