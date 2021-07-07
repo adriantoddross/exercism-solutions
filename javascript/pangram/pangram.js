@@ -5,6 +5,5 @@
       2.1 Use.match() to filter non alphabetic characters, then check if length === 26
 */
 
-export const isPangram = () => {
-  throw new Error("Remove this statement and implement this function");
-};
+export const isPangram = (string) =>
+  new Set(string.match(/[A-Za-z]/g)).size === 26;
