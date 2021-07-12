@@ -33,13 +33,13 @@ describe('Pangram()', () => {
     );
   });
 
-  xtest('missing letters replaced by numbers', () => {
+  test('missing letters replaced by numbers', () => {
     expect(isPangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog')).toBe(
       false
     );
   });
 
-  xtest('mixed case and punctuation', () => {
+  test('mixed case and punctuation', () => {
     expect(isPangram('"Five quacking Zephyrs jolt my wax bed."')).toBe(true);
   });
 
