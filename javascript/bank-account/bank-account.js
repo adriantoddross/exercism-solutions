@@ -1,12 +1,11 @@
 export class BankAccount {
   constructor() {
-    // init balance and status to null
-    throw new Error("Remove this statement and implement this function");
+    this._balance = 0;
+    this.active = false;
   }
 
   open() {
-    // Should set account balance to zero and set status to open
-    throw new Error("Remove this statement and implement this function");
+    this.active = true;
   }
 
   close() {
@@ -22,7 +21,7 @@ export class BankAccount {
   }
 
   get balance() {
-    throw new Error("Remove this statement and implement this function");
+    return this._balance;
   }
 }
 
