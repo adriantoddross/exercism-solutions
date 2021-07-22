@@ -1,6 +1,6 @@
 export class BankAccount {
   constructor() {
-    this._balance = 0;
+    this.totalCash = 0;
     this.active = false;
   }
 
@@ -12,8 +12,8 @@ export class BankAccount {
     throw new Error("Remove this statement and implement this function");
   }
 
-  deposit() {
-    throw new Error("Remove this statement and implement this function");
+  deposit(amount) {
+    this.totalCash += amount;
   }
 
   withdraw() {
@@ -21,7 +21,7 @@ export class BankAccount {
   }
 
   get balance() {
-    return this._balance;
+    return this.totalCash;
   }
 }
 
