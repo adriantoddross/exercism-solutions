@@ -22,7 +22,7 @@ describe("Bank Account", () => {
     expect(account.balance).toEqual(150);
   });
 
-  xtest("can withdraw money", () => {
+  test("can withdraw money", () => {
     const account = new BankAccount();
     account.open();
     account.deposit(100);
@@ -30,7 +30,7 @@ describe("Bank Account", () => {
     expect(account.balance).toEqual(50);
   });
 
-  xtest("can withdraw money sequentially", () => {
+  test("can withdraw money sequentially", () => {
     const account = new BankAccount();
     account.open();
     account.deposit(100);
