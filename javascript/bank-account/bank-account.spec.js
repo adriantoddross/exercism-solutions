@@ -14,7 +14,7 @@ describe("Bank Account", () => {
     expect(account.balance).toEqual(100);
   });
 
-  xtest("can deposit money sequentially", () => {
+  test("can deposit money sequentially", () => {
     const account = new BankAccount();
     account.open();
     account.deposit(100);
