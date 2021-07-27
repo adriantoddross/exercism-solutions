@@ -9,7 +9,7 @@ export class BankAccount {
   }
 
   close() {
-    throw new Error("Remove this statement and implement this function");
+    this.active = false;
   }
 
   deposit(amount) {
@@ -21,7 +21,11 @@ export class BankAccount {
   }
 
   get balance() {
-    return this.totalCash;
+    if (this.active) {
+      return this.totalCash;
+    } else {
+      throw new ValueError();
+    }
   }
 }
 
