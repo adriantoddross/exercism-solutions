@@ -39,7 +39,7 @@ describe("Bank Account", () => {
     expect(account.balance).toEqual(0);
   });
 
-  xtest("checking balance of closed account throws error", () => {
+  test("checking balance of closed account throws error", () => {
     const account = new BankAccount();
     account.open();
     account.close();
