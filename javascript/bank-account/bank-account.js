@@ -13,11 +13,19 @@ export class BankAccount {
   }
 
   deposit(amount) {
-    this.totalCash += amount;
+    if (this.active) {
+      this.totalCash += amount;
+    } else {
+      throw new ValueError();
+    }
   }
 
   withdraw(amount) {
-    this.totalCash -= amount;
+    if (this.active) {
+      this.totalCash -= amount;
+    } else {
+      throw new ValueError();
+    }
   }
 
   get balance() {
