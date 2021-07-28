@@ -1,4 +1,6 @@
 export class BankAccount {
+  // Refactor if statements into a simple function that will throw errors if account is inactive
+
   constructor() {
     this.totalCash = 0;
     this.active = false;
@@ -9,7 +11,11 @@ export class BankAccount {
   }
 
   close() {
-    this.active = false;
+    if (this.active) {
+      this.active = false;
+    } else {
+      throw new ValueError();
+    }
   }
 
   deposit(amount) {

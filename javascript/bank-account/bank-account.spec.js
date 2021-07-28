@@ -64,7 +64,7 @@ describe("Bank Account", () => {
     }).toThrow(ValueError);
   });
 
-  xtest("close already closed account throws error", () => {
+  test("close already closed account throws error", () => {
     const account = new BankAccount();
     expect(() => {
       account.close();
