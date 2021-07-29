@@ -24,7 +24,7 @@ export class BankAccount {
   }
 
   deposit(amount) {
-    if (this.active) {
+    if (this.active && amount > 0) {
       this.totalCash += amount;
     } else {
       throw new ValueError();
