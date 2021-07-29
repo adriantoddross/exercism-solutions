@@ -7,7 +7,11 @@ export class BankAccount {
   }
 
   open() {
-    this.active = true;
+    if (this.active) {
+      throw new ValueError();
+    } else {
+      this.active = true;
+    }
   }
 
   close() {
