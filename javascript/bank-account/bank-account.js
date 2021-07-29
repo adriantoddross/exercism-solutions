@@ -32,7 +32,7 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    if (this.active && amount <= this.totalCash) {
+    if (this.active && amount > 0 && amount <= this.totalCash) {
       this.totalCash -= amount;
     } else {
       throw new ValueError();
