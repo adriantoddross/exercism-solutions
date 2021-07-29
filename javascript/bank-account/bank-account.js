@@ -17,6 +17,7 @@ export class BankAccount {
   close() {
     if (this.active) {
       this.active = false;
+      this.totalCash = 0;
     } else {
       throw new ValueError();
     }
