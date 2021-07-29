@@ -1,5 +1,18 @@
 export class BankAccount {
-  // Refactor if statements into a simple function that will throw errors if account is inactive
+  /*
+ Refactor ideas
+  
+  1. Create a function to check for valid transactions/actions
+    init function called isValidTransaction
+      isValid(condition, ifStatement) => {
+        if (this.active && condition) {
+          action
+        }
+        else {
+          throw new ValueError();
+        }
+      }
+ */
 
   constructor() {
     this.totalCash = 0;
