@@ -4,12 +4,12 @@ export class BankAccount {
   
   1. Create a function to check for valid transactions/actions
     init function called isValidTransaction
-      isValid(condition, ifStatement) => {
+      isValid(condition, ifStatement, errorMessage) => {
         if (this.active && condition) {
           action
         }
         else {
-          throw new ValueError();
+          throw new ValueError(errorMessage);
         }
       }
  */
@@ -62,7 +62,7 @@ export class BankAccount {
 }
 
 export class ValueError extends Error {
-  constructor() {
-    super("Bank account error");
+  constructor(message = "Bank account error") {
+    super(message);
   }
 }
