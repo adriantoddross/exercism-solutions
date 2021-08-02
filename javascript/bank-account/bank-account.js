@@ -11,21 +11,21 @@ export class BankAccount {
     this.active = false;
   }
 
+  checkActiveStatus() {
+    if (!this.active) throw new ValueError("Account is inactive");
+    return;
+  }
+
   open() {
-    if (this.active) {
-      throw new ValueError();
-    } else {
-      this.active = true;
-    }
+    if (this.active) throw new ValueError("Cannot open an active account");
+    this.active = true;
   }
 
   close() {
-    if (this.active) {
-      this.active = false;
-      this.totalCash = 0;
-    } else {
-      throw new ValueError();
-    }
+    this.checkActiveStatus();
+
+    this.active = false;
+    this.totalCash = 0;
   }
 
   deposit(amount) {
