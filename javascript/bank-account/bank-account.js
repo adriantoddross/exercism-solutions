@@ -2,16 +2,8 @@ export class BankAccount {
   /*
  Refactor ideas
   
-  1. Create a function to check for valid transactions/actions
-    init function called isValidTransaction
-      isValid(condition, ifStatement, errorMessage) => {
-        if (this.active && condition) {
-          action
-        }
-        else {
-          throw new ValueError(errorMessage);
-        }
-      }
+ Convert if/else statements to guard clauses
+  1. Create isActive() method to use as a guard clause
  */
 
   constructor() {
