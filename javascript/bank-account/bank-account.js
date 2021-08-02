@@ -29,11 +29,10 @@ export class BankAccount {
   }
 
   deposit(amount) {
-    if (this.active && amount > 0) {
-      this.totalCash += amount;
-    } else {
-      throw new ValueError();
-    }
+    this.checkActiveStatus();
+    if (amount <= 0) throw new ValueError("Invalid deposit amount");
+    
+    this.totalCash += amount;
   }
 
   withdraw(amount) {
