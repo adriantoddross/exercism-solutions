@@ -30,17 +30,24 @@ export class BankAccount {
 
   deposit(amount) {
     this.checkActiveStatus();
-    if (amount <= 0) throw new ValueError("Invalid deposit amount");
-    
+    if (amount <= 0)
+      throw new ValueError("Deposit amount must be greater than zero");
+
     this.totalCash += amount;
   }
 
   withdraw(amount) {
-    if (this.active && amount > 0 && amount <= this.totalCash) {
-      this.totalCash -= amount;
-    } else {
-      throw new ValueError();
-    }
+    this.checkActiveStatus();
+
+    if (amount <= 0)
+      throw new ValueError("Withdrawal amount must be greater than zero");
+
+    if (amount > this.totalCash)
+      throw new ValueError(
+        `Withdrawal of ${amount} would overdraft your account balance of ${this.totalCash}`
+      );
+
+    this.totalCash -= amount;
   }
 
   get balance() {
