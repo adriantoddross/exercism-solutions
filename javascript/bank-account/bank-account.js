@@ -1,11 +1,4 @@
 export class BankAccount {
-  /*
- Refactor ideas
-  
- Convert if/else statements to guard clauses
-  1. Create isActive() method to use as a guard clause
- */
-
   constructor() {
     this.totalCash = 0;
     this.active = false;
@@ -44,7 +37,7 @@ export class BankAccount {
       throw new ValueError("Withdrawal amount must be greater than zero");
     if (amount > this.totalCash)
       throw new ValueError(
-        `Withdrawal of ${amount} would overdraft your account balance of ${this.totalCash}`
+        `Withdrawal of ${amount} would exceeds balance of ${this.totalCash}`
       );
 
     this.totalCash -= amount;
