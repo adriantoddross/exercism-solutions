@@ -11,7 +11,7 @@ export class BankAccount {
     this.active = false;
   }
 
-  checkActiveStatus() {
+  isAccountActive() {
     if (!this.active) throw new ValueError("Account is inactive");
     return;
   }
@@ -22,14 +22,15 @@ export class BankAccount {
   }
 
   close() {
-    this.checkActiveStatus();
+    this.isAccountActive();
 
     this.active = false;
     this.totalCash = 0;
   }
 
   deposit(amount) {
-    this.checkActiveStatus();
+    this.isAccountActive();
+
     if (amount <= 0)
       throw new ValueError("Deposit amount must be greater than zero");
 
@@ -37,11 +38,10 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    this.checkActiveStatus();
+    this.isAccountActive();
 
     if (amount <= 0)
       throw new ValueError("Withdrawal amount must be greater than zero");
-
     if (amount > this.totalCash)
       throw new ValueError(
         `Withdrawal of ${amount} would overdraft your account balance of ${this.totalCash}`
@@ -51,11 +51,8 @@ export class BankAccount {
   }
 
   get balance() {
-    if (this.active) {
-      return this.totalCash;
-    } else {
-      throw new ValueError();
-    }
+    this.isAccountActive();
+    return this.totalCash;
   }
 }
 
