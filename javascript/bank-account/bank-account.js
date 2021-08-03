@@ -13,7 +13,7 @@ export class BankAccount {
 
   isAccountActive() {
     if (!this.active) throw new ValueError("Account is inactive");
-    return;
+    return true;
   }
 
   open() {
