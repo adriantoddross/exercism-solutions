@@ -1,6 +1,6 @@
 "use strict";
 
-// Doing research at https://leetcode.com/explore/learn/card/array-and-string/202/introduction-to-2d-array/1166/
+// Doing research at https://www.javascripttutorial.net/javascript-multidimensional-array/
 
 export const annotate = (input) => {
   if (input.length <= 1) return input;
