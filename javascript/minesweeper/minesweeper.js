@@ -10,17 +10,26 @@
 
 export const annotate = (input) => {
   for (let col = 0; col < input.length; col++) {
-    let result = [];
+    // Open a for loop; let col = 0, increment col while it is less than board length
+    let result = []; // Create an empty array called result
+
     for (let row = 0; row < input[col].length; row++) {
-      let range = [];
+      // Create a nested for loop; let row = 0, increment row while it is less than column length
+      let range = []; // Create an empty array called range
 
       for (let j = -1; j < 2; j++) {
+        // Create a 2nd nested for loop; j = -1, increment j while j is less than 2
+
         for (let i = -1; i < 2; i++) {
+          // Create a 3rd nested for loop; let i = -1, increment i while i is less than 2
           if (input[col + j] != undefined) {
+            // If the column index is NOT undefined...
             if (input[col + j][row + i] != undefined) {
+              // nested if statement
+              // and if the board position is NOT undefined...
               range.push(input[col + j][row + i]);
             } else range.push("-");
-          } else range.push("-");
+          } else range.push("-"); // end of outer if statment
         }
       }
       range.join("").match(/\*/g)
