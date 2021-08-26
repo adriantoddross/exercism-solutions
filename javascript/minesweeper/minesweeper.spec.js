@@ -21,7 +21,7 @@ describe(")", () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  test("handles mine surrounded by spaces", () => {
+  test.only("handles mine surrounded by spaces", () => {
     const input = ["   ", " * ", "   "];
     const expected = ["111", "1*1", "111"];
     expect(annotate(input)).toEqual(expected);
