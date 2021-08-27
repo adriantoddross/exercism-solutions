@@ -35,15 +35,19 @@ export const annotate = (input) => {
       }
       // Now that we've formatted the board, check for mines
 
+      // now we join the range array values together and add them to the results array
       range.join("").match(/\*/g)
         ? result.push(range.join("").match(/\*/g).length)
         : result.push(0);
 
-      console.table(range);
+      // console.table(range);
     }
+    console.log({input: input[col], split: input[col].split("")})
+    // here, we are modifying the input, which is a no-no... but i digress
+    input[col] = input[col].split(""); // ???
 
-    input[col] = input[col].split("");
     for (let row = 0; row < input[col].length; row++) {
+      // if board position is NOT a mine, and 
       if (input[col][row] !== "*" && result[row] !== 0)
         input[col][row] = String(result[row]);
     }

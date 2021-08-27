@@ -21,7 +21,7 @@ describe(")", () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  test.only("handles mine surrounded by spaces", () => {
+  test("handles mine surrounded by spaces", () => {
     const input = ["   ", " * ", "   "];
     const expected = ["111", "1*1", "111"];
     expect(annotate(input)).toEqual(expected);
@@ -57,7 +57,7 @@ describe(")", () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  xtest("handles cross", () => {
+  test.only("handles cross", () => {
     const input = ["  *  ", "  *  ", "*****", "  *  ", "  *  "];
     const expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "];
     expect(annotate(input)).toEqual(expected);
