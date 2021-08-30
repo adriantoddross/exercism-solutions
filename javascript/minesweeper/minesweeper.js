@@ -42,15 +42,17 @@ export const annotate = (input) => {
 
       // console.table(range);
     }
-    console.log({input: input[col], split: input[col].split("")})
+    console.log({ input: input[col], split: input[col].split("") });
     // here, we are modifying the input, which is a no-no... but i digress
     input[col] = input[col].split(""); // ???
 
     for (let row = 0; row < input[col].length; row++) {
-      // if board position is NOT a mine, and 
+      // if board position is NOT a mine, and result[row] is not 0...
       if (input[col][row] !== "*" && result[row] !== 0)
+        // assign the string of result[row] to its column & row
         input[col][row] = String(result[row]);
     }
+    // what's happening here, and why?
     input[col] = input[col].join("");
   }
   console.log("final input", input);
