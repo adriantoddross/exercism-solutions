@@ -4,27 +4,27 @@ import {
   remainingMinutesInOven,
   preparationTimeInMinutes,
   totalTimeInMinutes,
-} from './lasagna';
+} from "./lasagna";
 
-describe('lasagna', () => {
-  it('EXPECTED_MINUTES_IN_OVEN', () => {
+describe("lasagna", () => {
+  it("EXPECTED_MINUTES_IN_OVEN", () => {
     expect(EXPECTED_MINUTES_IN_OVEN).toBe(40);
   });
 
-  describe('remainingMinutesInOven', () => {
+  describe("remainingMinutesInOven", () => {
     [
       [25, 15],
       [20, 20],
       [39, 1],
       [5, 35],
     ].forEach(([actualMinutesInOven, expected]) => {
-      xit(`remainingMinutesInOven(${actualMinutesInOven})`, () => {
+      it(`remainingMinutesInOven(${actualMinutesInOven})`, () => {
         expect(remainingMinutesInOven(actualMinutesInOven)).toBe(expected);
       });
     });
   });
 
-  describe('preparationTimeInMinutes', () => {
+  describe("preparationTimeInMinutes", () => {
     [
       [1, 2],
       [2, 4],
@@ -37,7 +37,7 @@ describe('lasagna', () => {
     });
   });
 
-  describe('totalTimeInMinutes', () => {
+  describe("totalTimeInMinutes", () => {
     [
       [1, 5, 7],
       [2, 10, 14],
