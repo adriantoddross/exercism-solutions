@@ -31,7 +31,7 @@ describe("lasagna", () => {
       [4, 8],
       [8, 16],
     ].forEach(([numberOfLayers, expected]) => {
-      xit(`preparationTimeInMinutes(${numberOfLayers})`, () => {
+      it(`preparationTimeInMinutes(${numberOfLayers})`, () => {
         expect(preparationTimeInMinutes(numberOfLayers)).toBe(expected);
       });
     });

@@ -55,7 +55,7 @@ export function remainingMinutesInOven(actualMinutesInOven) {
  * @returns {number} the total preparation time
  */
 export function preparationTimeInMinutes(numberOfLayers) {
-  throw new Error("Please implement the preparationTimeInMinutes method");
+  return numberOfLayers * 2;
 }
 
 /**
