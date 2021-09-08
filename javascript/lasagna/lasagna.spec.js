@@ -44,7 +44,7 @@ describe("lasagna", () => {
       [4, 15, 23],
       [1, 35, 37],
     ].forEach(([numberOfLayers, actualMinutesInOven, expected]) => {
-      xit(`totalTimeInMinutes(${numberOfLayers}, ${actualMinutesInOven})`, () => {
+      it(`totalTimeInMinutes(${numberOfLayers}, ${actualMinutesInOven})`, () => {
         expect(totalTimeInMinutes(numberOfLayers, actualMinutesInOven)).toBe(
           expected
         );
